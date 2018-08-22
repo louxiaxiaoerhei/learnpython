@@ -1,0 +1,40 @@
+# 导入模块
+import pygame
+# 初始化pygame
+pygame.init()
+# 创建游戏窗口
+# set_mode([窗口的宽度, 窗口的高度]) 单位均是像素
+window = pygame.display.set_mode([512, 768])
+# 加载本地图片
+ico_img = pygame.image.load("res/app.ico")
+
+# 设置游戏窗口的icon
+pygame.display.set_icon(ico_img)
+
+# 设置游戏窗口的文字
+pygame.display.set_caption("飞机大战")
+
+# 加载本地图片
+bg_img = pygame.image.load("res/img_bg_level_1.jpg")
+
+
+# 加载本地图片
+plane_img = pygame.image.load("res/hero2.png")
+# 获取图片矩形
+plane_img_rect = plane_img.get_rect()
+# <rect(0, 0, 120, 78)>
+# x, y, w, h
+# 获取图片矩形各个值  -> 通过下标索引plane_img_rect[2]
+print(plane_img_rect)
+
+while True:
+    # 添加图片到游戏窗口中
+    window.blit(bg_img, (0, 0))
+    # 添加图片到游戏窗口中
+    window.blit(plane_img, (plane_img_rect[0], plane_img_rect[1]))
+    # 刷新游戏窗口
+    pygame.display.update()
+
+    #修改 x坐标和y坐标
+    # move_ip(每次增加 或者减小的像素, 每次增加 或者减小的像素)
+    plane_img_rect.move_ip(1, 1)
