@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter</title>
+</head>
+<body>
+{# 过滤器的使用 #}
+<p>列表反转：{{ [3,2,5,6,1] | lss }}</p>
+<p>默认输出：{{ [3,2,5,6,1] }}</p>
+<p>求和：{{ [3,2,5,6,1] | sum }}</p>
+<p>排序：{{ [3,2,5,6,1] | sort}}</p>
+<p>第一个值：{{ [3,2,5,6,1] | first }}</p>
+<p>最后一个值：{{ [3,2,5,6,1] | last }}</p>
+<p>长度：{{ [3,2,5,6,1] | length }}</p>
+
+
+
+<hr>
+{# 模板把变量中的特殊字符<&'">，当成原始字符串输出，不按照超文本标记语言的语义解析 #}
+<p>默认输出：{{ '<em>hello world</em>' }}</p>
+{# safe是关闭模板的转义功能，谨慎使用，确认数据安全的情况下可以使用safe #}
+<p>禁用转义：{{ '<em>hello world</em>' | safe }}</p>
+
+<hr>
+<p>默认输出：{{ 'bAnK OF cHiNA' }}</p>
+<p>大写：{{ 'bAnK OF cHiNA' | upper }}</p>
+<p>小写：{{ 'bAnK OF cHiNA' | lower }}</p>
+<p>首字母大写：{{ 'bAnK OF cHiNA' | capitalize }}</p>
+<p>每个单词大写：{{ 'bAnK OF cHiNA' | title }}</p>
+<p>字符串反转：{{ 'bAnK OF cHiNA' | reverse }}</p>
+{# 过滤器支持链式调用，执行顺序是从前到后，依次执行 #}
+<p>字符串反转再反转：{{ 'bAnK OF cHiNA' | reverse | reverse }}</p>
+
+
+
+</body>
+</html>

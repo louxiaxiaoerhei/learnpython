@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<h1>index info</h1>
+{# 模板中语句的使用 #}
+{#{% for data in data_list %}#}
+{#    <p>{{ data }}</p>#}
+{# 获取循环的索引，从1开始    #}
+{#    {{ loop.index }}#}
+{# 获取循环的索引，从0开始 #}
+{#    {{ loop.index0 }}#}
+{#{% endfor %}#}
+{# 循环和判断语句配合使用 #}
+{% for data in data_list if data != 2%}
+    {% if data % 2 == 0 %}
+        <p>{{ data }}</p>
+    {% endif %}
+{% endfor %}
+
+
+<hr>
+{# 变量的使用 #}
+{{ data }} <br>
+{# 字典的使用 #}
+{{ data_dict }} <br>
+{# 字典根据键来取值 #}
+<p>name:{{ data_dict['name'] }}</p>
+<p>age:{{ data_dict['age'] }}</p>
+{# 列表的使用 #}
+<p>{{ data_list }}</p>
+
+
+
+
+
+</body>
+</html>
