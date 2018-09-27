@@ -1,0 +1,16 @@
+<h3>注册</h3>
+
+<form method="post">
+    {{ form.csrf_token }}
+    <p>用户名：{{ form.user }}</p>
+    <p>密码：{{ form.pswd }}</p>
+    <p>确认密码：{{ form.pswd2 }}</p>
+    {{ form.submit }}
+
+</form>
+
+
+
+
+
+

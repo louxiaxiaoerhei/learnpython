@@ -1,0 +1,32 @@
+<form method="post">
+    <input type="text" name="user" placeholder="User" size="20">
+    <input type="password" name="pswd" placeholder="Password" size="20">
+    <input type="submit" >
+
+</form>
+
+{#<hr>#}
+{# 导入宏 #}
+{#{% import 'temp_macro.html' as f %}#}
+{#{{ f.func('text',100) }}#}
+
+{# 宏的定义 #}
+{#{% macro func() %}#}
+{#    <input type="text" name="user" placeholder="User" size="20"> <br>#}
+{#    <input type="password" name="pswd" placeholder="Password" size="20"> <br>#}
+{#    <input type="submit" >#}
+{#{% endmacro %}#}
+
+{# 宏的调用 #}
+
+
+{#{{ func() }}#}
+{#<hr>#}
+
+{#{% macro func(type,size) %}#}
+{#    <input type="{{ type }}" name="user" placeholder="User" size="{{ size }}"> <br>#}
+{#    <input type="{{ type }}" name="pswd" placeholder="Password" size="{{ size }}"> <br>#}
+{#    <input type="submit" >#}
+{#{% endmacro %}#}
+
+{#{{ func('password',60) }}#}
