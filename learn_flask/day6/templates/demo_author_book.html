@@ -1,0 +1,30 @@
+<h1>作者图书</h1>
+
+<form method="post">
+    {{ form.csrf_token }}
+    <p>作者：{{ form.wtf_author }}</p>
+    <p>书籍：{{ form.wtf_book }}</p>
+    <p>{{ form.wtf_submit }}</p>
+
+
+</form>
+
+
+
+<ul>
+    <li>{% for data in author %}</li>
+    <li>{{ data }}</li> <a href="/delete_author/{{ data.id }}">删除</a>
+    <li>{% endfor %}</li>
+</ul>
+
+<ul>
+    <li>{% for data in book %}</li>
+    <li>{{ data }}</li> <a href="/delete_book{{ data.id }}">删除</a>
+    <li>{% endfor %}</li>
+</ul>
+
+
+
+
+
+
